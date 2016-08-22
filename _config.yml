@@ -5,6 +5,6 @@ description: "Canmor Lam's Blog"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://canmor.lams.io" # the base hostname & protocol for your site
 twitter_username: canmor_lam
-github_username:  'canmor-lam'
+github_username:  'canmor'
 
 # Build settings
