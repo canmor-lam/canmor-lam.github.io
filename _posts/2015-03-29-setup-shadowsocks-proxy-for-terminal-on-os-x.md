@@ -21,13 +21,13 @@ Use *privoxy* to forward *http* proxy to *socks5* proxy.
     listen-address  127.0.0.1:8118
     forward-socks5 / localhost:1080 .
     ```
-    
+
     > ##### Note:
     > 
     > 1. There might be already a `listen-address 127.0.0.1:8118` line in the file, **do not** repeat it.
-    > 2. `listen-address [::1]:8118` is for IPv6, it's **important** because it's requried for some tools (as I known: wget).
+    > 2. `listen-address [::1]:8118` is for IPv6, it's **important** because it's required for some tools (as I known: wget).
 
-        
+
 3. Add these scripts to your shell profile (for bash on OS X, it's `~/.bash_profile`) for helping enable/disable proxy:
 
 	```bash
