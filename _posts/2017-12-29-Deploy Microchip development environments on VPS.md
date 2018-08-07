@@ -1,23 +1,24 @@
 ---
 layout: post
 title:  Deploy Microchip Development Environments on VPS
-date:   2017-06-29 03:18:51
-categories: 
+categories: tools
+tags: [xc32, microchip]
 ---
 
 Linux 32bit is required, Ubuntu i386 distribution is recommended.
 
-1. Install desktop
+0. Install 32bit runtime if you are running a 64bit OS.
 
-    ```bash
-    # apt-get update
-    # apt-get install ubuntu-desktop -y
-    ```
+   ```shell
+   sudo dpkg --add-architecture i386
+   sudo apt-get update
+   sudo apt-get install libc6:i386 libx11-6:i386 libxext6:i386 libstdc++6:i386 libexpat1:i386
+   ```
 
 2. Download files
 
     ```shell
-    $ wget http://ww1.microchip.com/downloads/en/DeviceDoc/xc32-v1.43-full-install-linux-installer.run http://ww1.microchip.com/downloads/en/DeviceDoc/MPLABX-v4.01-linux-installer.tar
+    wget http://ww1.microchip.com/downloads/en/DeviceDoc/xc32-v1.43-full-install-linux-installer.run http://ww1.microchip.com/downloads/en/DeviceDoc/MPLABX-v4.01-linux-installer.tar
     ```
     or 
     ```
@@ -29,13 +30,13 @@ Linux 32bit is required, Ubuntu i386 distribution is recommended.
     Extract installer:
 
     ```shell
-    $ tar xf MPLABX-v4.01-linux-installer.tar
+    tar xf MPLABX-v4.01-linux-installer.tar
     ```
 
     You will get a shell script file, excute it:
 
     ```shell
-    # ./MPLABX-v4.01-linux-installer.sh
+    sudo ./MPLABX-v4.01-linux-installer.sh
     ```
 
     Just follow the prompt to answer the requests to get installation done.
@@ -45,28 +46,37 @@ Linux 32bit is required, Ubuntu i386 distribution is recommended.
     Give the installer excutive permission and run it:
 
     ```shell
-    $ chmod +x xc32-v1.43-full-install-linux-installer.run
-    # ./xc32-v1.43-full-install-linux-installer.run
+    chmod +x xc32-v1.43-full-install-linux-installer.run
+    sudo ./xc32-v1.43-full-install-linux-installer.run
     ```
 
     Just follow the prompt to answer the requests to get installation done.
 
-5. Activate xc32
+4. Activate xc32
 
-    Get license from [here](http://www.microchip.com/xcdemo/GetDemoLicense.aspx).
+    Get license from [here](http://www.microchip.com/xcdemo/GetDemoLicense.aspx), with your *host ID* which is showed to you during previous xc32 installation. Download a license script from web site, copy to your server and execute:
+
+    ```shell
+    chmod +x 42010a8c0002-xc32-demo.sh
+    ./42010a8c0002-xc32-demo.sh
+    ```
+
+    >  **提示**
+    >
+    > 上面的 *42010a8c0002* 是一个 host ID 的例子，请替换成你的
 
 6. Install java runtime (JRE, required by IDE)
 
     Almost done, since MPLAB X is based on NetBeans, which is required a Java runtime to run, and MPLAB X does not ship with a Java runtime, we need to get one.
 
     ```shell
-    # apt-get install java
+    sudo apt-get install java
     ```
 
 7. Install harmony if necessary
 
     ```shell
-    $ wget http://ww1.microchip.com/downloads/en/DeviceDoc/harmony_v2_01b_linux_installer.run
-    $ chmod +x harmony_v2_01b_linux_installer.run
-    # ./harmony_v2_01b_linux_installer.run
+    wget http://ww1.microchip.com/downloads/en/DeviceDoc/harmony_v2_01b_linux_installer.run
+    chmod +x harmony_v2_01b_linux_installer.run
+    sudo ./harmony_v2_01b_linux_installer.run
     ```

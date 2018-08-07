@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  Setup Shadowsocks Proxy for Terminal on OS X
-date:   2015-03-29 03:18:51
 categories: proxy
 ---
 Use *privoxy* to forward *http* proxy to *socks5* proxy.

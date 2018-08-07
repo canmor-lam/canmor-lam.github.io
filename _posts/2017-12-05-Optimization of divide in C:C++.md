@@ -1,9 +1,8 @@
 ---
 layout: post
 title:  Optimization of divide in C/C++
-date:   2017-12-05 03:18:51
 categories: c/c++
-tags: code optimization
+tags: code-optimization
 ---
 
 I'd heard about that before:
