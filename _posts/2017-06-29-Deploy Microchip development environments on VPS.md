@@ -50,7 +50,7 @@ Linux 32bit is required, Ubuntu i386 distribution is recommended.
     sudo ./xc32-v1.43-full-install-linux-installer.run
     ```
 
-    Just follow the prompt to answer the requests to get installation done.
+    Just follow the prompt to answer the requests to get installation done. Installer will ask you to choose a license, 'Workstation' is recommended (you can get a license for trial later).
 
 4. Activate xc32
 
@@ -61,9 +61,9 @@ Linux 32bit is required, Ubuntu i386 distribution is recommended.
     ./42010a8c0002-xc32-demo.sh
     ```
 
-    >  **提示**
+    >  **Tips**
     >
-    > 上面的 *42010a8c0002* 是一个 host ID 的例子，请替换成你的
+    > You should replace *42010a8c0002* with your host ID
 
 6. Install java runtime (JRE, required by IDE)
 
